@@ -15,29 +15,70 @@ body {
     position: absolute;
     opacity: 0;
     z-index: 2;
-
 }
+
+.timeline {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    top: 10%;
+    right: 15%;
+	list-style: none;
+	position: absolute;
+	z-index: 3;
+}
+.timeline:before {
+	content: '';
+	position: absolute;
+	top:0;
+	bottom: 0;
+	width: 10px;
+	background: #afdcf8;
+	right: -10%;
+}
+.timeline > li .story {
+	margin: 0 0 15px 25%;
+	background: #3594cb;
+	color: #fff;
+	padding: 2em;
+	font-size: 1.2em;
+	font-weight: 300;
+	line-height: 1.4;
+	position: relative;
+	border-radius: 5px;
+}
+
+.timeline > li:nth-child(odd) .story {
+	background: #6cbfee;
+}
+
+.timeline > li .story h2 { 
+	margin-top: 0px;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+/* The triangle */
+.timeline > li .story:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #3594cb;
+	border-width: 10px;
+	top: 10px;
+}
+
+.timeline > li:nth-child(odd) .story:after {
+	border-right-color: #6cbfee;
+}
+
 
 section {
     display: grid;
     grid-template-columns: repeat(9, auto);
 }
-.path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: dash 5s linear alternate infinite;
-  }
-  
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 822;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
-section  div {
+section div {
     background-color: white;
     height: 100vh;
     transition: background-color 1s;
@@ -74,7 +115,51 @@ span input {
     right: 10px;
 }
 
-
+.sentence{
+	margin: 0;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+.rotate-words{
+    display: inline;
+    width: 100px;
+	text-indent: 10px;
+}
+.rotate-words span{
+    position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	color: #6b969d;
+}
+.rotate-words span{
+	animation: rotateWordsFirst 18s linear infinite 0s;
+}
+.rotate-words span:nth-child(2) { 
+	animation-delay: 3s; 
+	color: #6b889d;
+}
+.rotate-words span:nth-child(3) { 
+	animation-delay: 6s; 
+	color: #6b739d;	
+}
+.rotate-words span:nth-child(4) { 
+	animation-delay: 9s; 
+	color: #7a6b9d;
+}
+.rotate-words span:nth-child(5) { 
+	animation-delay: 12s; 
+	color: #8d6b9d;
+}
+.rotate-words span:nth-child(6) {  
+	animation-delay: 15s; 
+	color: #9b6b9d;
+}
+@keyframes rotateWordsFirst {
+    0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+    8% { opacity: 1; height: 60px; }
+    19% { opacity: 1; height: 60px; }
+	25% { opacity: 0; height: 60px; }
+    100% { opacity: 0; }
+}
 h1 {
     font-size: 4em;
     position: absolute;
@@ -85,83 +170,27 @@ h1 {
 }
 h2 {
     font-size: 1.5em;
-     position: absolute;
+    position: absolute;
     top: 50%;
     left: 12%;
     opacity: 0;
     z-index: 2;
-  }
-h3 {
-    font-size: 1.5em;
-    position: absolute;
-    top: 20%;
-    right: 12%;
-    opacity: 0;
-    z-index: 2;
 }
-h4 {
-    font-size: 1.5em;
-    position: absolute;
-    top: 30%;
-    right: 12%;
-    opacity: 0;
-    z-index: 2;
-}
-h5 {
-    font-size: 1.5em;
-    position: absolute;
-    top: 40%;
-    right: 12%;
-    opacity: 0;
-    z-index: 2;
-}
-h6 {
-    font-size: 1.5em;
-    position: absolute;
-    top: 50%;
-    right: 12%;
-    opacity: 0;
-    z-index: 2;
-}
-.first img {
-    height: 100px;
-    width: 100px;
+.images {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     position: absolute;
     bottom: 10%;
-    right: 10%;
-    opacity: 0;
-    z-index: 2;
-    border-radius: 10px;
+    right: 15%;
 }
-.second img {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 10%;
-    right: 16%;
+
+.images img {
+    position: relative;
     opacity: 0;
-    z-index: 2;
-    border-radius: 10px;
-}
-.third img {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 10%;
-    right: 22%;
-    opacity: 0;
-    z-index: 2;
-    border-radius: 10px;
-}
-.fourth img {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 10%;
-    right: 28%;
-    opacity: 0;
-    z-index: 2;
-    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    z-index: 3;
 }
 
 .icons {
@@ -175,3 +204,28 @@ h6 {
     opacity: 0;
     z-index: 2;
 }
+
+/* CSS that's applied when the viewing area's width is 800px or less */
+@media screen and (max-width: 800px){
+    html{
+    overflow-x:auto !important;
+    }
+    body{
+    overflow-x:auto !important;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .timeline{
+        font-size: 0.5em;
+    }
+    .bar {
+        width: 200px;
+        padding: 10px;
+    }
+    .images img {
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+    }
+  }

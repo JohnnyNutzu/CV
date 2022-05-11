@@ -57,33 +57,7 @@ let tl = anime.timeline({
         bottom: '20%',
         opacity: 1,
         duration: 1000,
-
     }, '-=1000')
-    
-    .add({
-        targets: 'h3',
-        top: '10%',
-        opacity: 1,
-        duration: 2000,
-    }, '-=1600')
-    .add({
-        targets: 'h4',
-        top: '20%',
-        opacity: 1,
-        duration: 2000,
-    }, '-=1600')
-    .add({
-        targets: 'h5',
-        top: '30%',
-        opacity: 1,
-        duration: 2000,
-    }, '-=1600')
-    .add({
-        targets: 'h6',
-        top: '40%',
-        opacity: 1,
-        duration: 2000,
-    }, '-=1600')
     .add({
         targets: '.icons .fa',
         bottom: '5%',
@@ -124,48 +98,17 @@ let tl = anime.timeline({
         duration: 2000,
     }, '-=1600')
     .add({
+        targets: '.images img',
+        opacity: 1,
+        easing: 'easeInElastic(2, .3)',
+        duration: 2000,  
+    }, '-=1600')
+    .add({
         targets: ['section div:nth-child(1)','section div:nth-child(9)'],
         easing: 'easeInOutQuad',
         rotate: '360deg',
         backgroundColor: 'rgb(155, 155, 169)'
     })
-
-    anime({
-        targets: '.first img',
-        botoom: '30%',
-        opacity: 1,
-        duration: 2000,
-        delay: 5000,
-        easing: 'easeInOutQuad',
-        rotate: '360deg'
-    })
-    anime({
-        targets: '.second img',
-        botoom: '30%',
-        opacity: 1,
-        duration: 2000,
-        delay: 5000,
-        easing: 'easeInOutQuad',
-        rotate: '360deg'
-    })
-    anime({
-        targets: '.third img',
-        botoom: '30%',
-        opacity: 1,
-        duration: 2000,
-        delay: 5000,
-        easing: 'easeInOutQuad',
-        rotate: '360deg'
-    })
-    anime({
-        targets: '.fourth img',
-        botoom: '30%',
-        opacity: 1,
-        duration: 2000,
-        delay: 5000,
-        easing: 'easeInOutQuad',
-        rotate: '360deg'
-    }) 
 var show = anime({
     targets: 'img',
     translateX: '20%',
