@@ -228,4 +228,25 @@ h2 {
         height: 25px;
         padding: 5px;
     }
-  }
+}
+@media screen and (max-width: 425px){
+    html{
+    overflow-x:auto !important;
+    }
+    body{
+    overflow-x:auto !important;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .timeline{
+        font-size: 0.5em;
+    }
+    .bar {
+        width: 200px;
+        padding: 10px;
+    }
+    .images img {
+       display: none;
+    }
+}
