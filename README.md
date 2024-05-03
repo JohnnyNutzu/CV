@@ -1,5 +1,6 @@
 # CV
-Single page CV
+Single page CV, Live  https://johnnynutzu.github.io/CV/
+
 
 # Description
 Node with Html on AnimeJS 
